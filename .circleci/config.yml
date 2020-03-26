@@ -24,5 +24,15 @@ jobs:
             - run:
                 name: docker login
                 command: |
-                    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 492266378106.dkr.ecr.us-east-1.amazonaws.com/sluis117
-    
+                    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $aws_account_id.dkr.ecr.us-east-1.amazonaws.com/fullmotion
+            
+            - run:
+                name: docker tag
+                command: |
+                    docker tag fullmotion $aws_account_id.dkr.ecr.us-east-1.amazonaws.com/fullmotion:$CIRCLE_SHA1
+            
+            - run:
+                name: docker push
+                command: |
+                    docker push $aws_account_id.dkr.ecr.us-east-1.amazonaws.com/fullmotion:$CIRCLE_SHA1
+                    
