@@ -1,0 +1,14 @@
+version: 2.1
+
+description: |
+    Install and configure the aws command-line Interface (awscli) and push image to ecr
+
+jobs:
+    build:
+        machine: true
+        steps:
+            - run:
+                name: Install AWS CLI
+                command: 
+                    apk -no-cache add py-pi pip install awscli
+                    echo aws --version
