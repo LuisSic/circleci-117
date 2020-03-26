@@ -15,9 +15,9 @@ jobs:
                     unzip awscliv2.zip
                     sudo ./aws/install
                     aws --version
-            
             - run:
                 name: build docker image
-                command:
+                command: |
                     docker build -t fullmotion .
                     docker images
+    
