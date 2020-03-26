@@ -7,6 +7,8 @@ jobs:
     build:
         machine: true
         steps:
+            - checkout
+            - setup_remote_docker
             - run:
                 name: Install AWS CLI
                 command: |
@@ -18,5 +20,5 @@ jobs:
             - run:
                 name: build docker image
                 command:
-                    docker build -t circleci/fullMotion:$CIRCLE_BRANCH .
+                    docker build -t circleci/fullMotion:1.2 .
                     docker images
