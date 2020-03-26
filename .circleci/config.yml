@@ -14,3 +14,9 @@ jobs:
                     unzip awscliv2.zip
                     sudo ./aws/install
                     aws --version
+            
+            - run:
+                name: build docker image
+                command:
+                    docker build -t circleci/fullMotion:$CIRCLE_BRANCH .
+                    docker images
