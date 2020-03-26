@@ -19,5 +19,5 @@ jobs:
             - run:
                 name: build docker image
                 command:
-                    docker build -t circleci/fullmotion:1.2 .
+                    docker build -t fullmotion .
                     docker images
