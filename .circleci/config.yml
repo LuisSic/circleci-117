@@ -20,4 +20,9 @@ jobs:
                 command: |
                     docker build -t fullmotion .
                     docker images
+            
+            - run:
+                name: docker login
+                command: |
+                    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 492266378106.dkr.ecr.us-east-1.amazonaws.com/sluis117
     
