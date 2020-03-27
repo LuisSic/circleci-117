@@ -36,3 +36,8 @@ jobs:
                 command: |
                     docker push $aws_account_id.dkr.ecr.us-east-1.amazonaws.com/circlecisluis:$CIRCLE_SHA1
                     
+            - run:
+                name: Task Definition
+                command: |
+                    sed -i 's/image/"$aws_account_id.dkr.ecr.us-east-1.amazonaws.com/circlecisluis:$CIRCLE_SHA1"/g' /ecs/task.json
+                    cat /ecs/task.json
