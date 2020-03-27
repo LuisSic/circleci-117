@@ -1,8 +1,6 @@
 {
   "containerDefinitions": [
     {
-      "dnsSearchDomains": [],
-      "entryPoint": [],
       "portMappings": [
         {
           "hostPort": 80,
@@ -10,22 +8,10 @@
           "containerPort": 80
         }
       ],
-      "command": [],
       "cpu": 0,
-      "environment": [],
-      "ulimits": [],
-      "dnsServers": [],
-      "mountPoints": [],
-      "secrets": [],
-      "dockerSecurityOptions": [],
       "memory": 128,
-      "volumesFrom": [],
       "image": "AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/APP_ID",
       "essential": true,
-      "links": [],
-      "extraHosts": [],
-      "dockerLabels": {},
-      "systemControls": [],
       "name": "Full-Motion"
     }
   ],
