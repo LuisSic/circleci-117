@@ -28,7 +28,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "DOCLER_IMAGE_ECR",
+      "image": "AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/APP_ID",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
