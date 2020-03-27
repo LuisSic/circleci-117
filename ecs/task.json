@@ -45,8 +45,5 @@
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
     }
   ],
-  "requiresCompatibilities": [],
-  "revision": 6,
-  "status": "ACTIVE",
   "volumes": []
 }
