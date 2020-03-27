@@ -29,21 +29,5 @@
       "name": "Full-Motion"
     }
   ],
-  "placementConstraints": [],
-  "compatibilities": [
-    "EC2"
-  ],
-  "family": "CircleCiSluis",
-  "requiresAttributes": [
-    {
-      "name": "com.amazonaws.ecs.capability.ecr-auth"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-    }
-  ],
-  "volumes": []
+  "family": "CircleCiSluis"
 }
