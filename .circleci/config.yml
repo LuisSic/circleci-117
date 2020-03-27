@@ -38,8 +38,8 @@ jobs:
             - run:
                 name: Modify the json
                 command: |
-                    sed -e 's/AWS_ACCOUNT_ID/'$aws_account_id'/g' ./ecs/task.json
-                    sed -e 's/APP_ID/'circlecisluis:$CIRCLE_SHA1'/g' ./ecs/task.json
+                    sed -i 's/AWS_ACCOUNT_ID/'$aws_account_id'/g' ./ecs/task.json
+                    sed -i 's/APP_ID/'circlecisluis:$CIRCLE_SHA1'/g' ./ecs/task.json
                 
             - run:
                 name: Create task Definition
