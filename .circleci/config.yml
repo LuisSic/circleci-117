@@ -41,4 +41,4 @@ jobs:
                 command: |
                     sed -e 's/AWS_ACCOUNT_ID/'$aws_account_id'/g' ./ecs/task.json
                     sed -e 's/APP_ID/'circlecisluis:$CIRCLE_SHA1'/g' ./ecs/task.json
-                    cat ./ecs/task.json
+                    aws ecs register-task-definition --cli-input-json file://$HOME/ecs/task.json
