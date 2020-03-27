@@ -39,6 +39,7 @@ jobs:
             - run:
                 name: Task Definition
                 command: |
-                    sed -i 's/DOCLER_IMAGE_ECR/'$aws_account_id.dkr.ecr.us-east-1.amazonaws.com/circlecisluis:$CIRCLE_SHA1'/g' /ecs/task.json
+                    sudo apt-get install jq
+                    jq '.image = "$aws_account_id.dkr.ecr.us-east-1.amazonaws.com/circlecisluis:$CIRCLE_SHA1"' <<<"$/ecs/task
                     cat /ecs/task.json
                     aws ecs register-task-definition --cli-input-json file://$HOME/ecs/task.json
