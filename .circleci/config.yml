@@ -50,3 +50,7 @@ jobs:
                 name: Update Service
                 command: |
                     UPDATE_SERVICE=$(aws ecs update-service --cluster $NAME_CLUSTER --service $NAME_SERVICE --task-definition CircleCiSluis --desired-count 4)
+                
+            - run:
+                name: Service Stable
+                command: aws ecs wait services-stable --cluster $NAME_CLUSTER --services $NAME_SERVICE
