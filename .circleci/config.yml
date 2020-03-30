@@ -44,9 +44,9 @@ jobs:
             - run:
                 name: Create task Definition
                 command: |
-                    echo $TERM
                     TASK=$(aws ecs register-task-definition --cli-input-json file://ecs/task.json)
             
             - run:
                 name: Update Service
-                Command: UPDATE_SERVICE=$(aws ecs update-service --cluster $NAME_CLUSTER --service $NAME_SERVICE --task-definition Full-Motion --desired-count 4)
+                command: |
+                    UPDATE_SERVICE=$(aws ecs update-service --cluster $NAME_CLUSTER --service $NAME_SERVICE --task-definition CircleCiSluis --desired-count 4)
